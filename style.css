@@ -1,0 +1,257 @@
+/* --- Variáveis de Cores e Fontes (fácil de customizar) --- */
+:root {
+    --primary-color: #007BFF; 
+    --primary-hover-color: #0056b3; 
+    --background-color: #f8f9fa; 
+    --card-background-color: #ffffff; 
+    --text-color: #343a40; 
+    --heading-color: #212529; 
+    --border-color: #dee2e6; 
+    
+    --font-family-main: 'Helvetica', 'Arial', sans-serif;
+}
+
+/* --- Reset Básico e Estilos Globais --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; 
+}
+
+body {
+    font-family: var(--font-family-main);
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+h1, h2, h3 {
+    color: var(--heading-color);
+    margin-bottom: 1rem;
+}
+
+section {
+    padding: 5rem 0;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary-hover-color);
+}
+
+
+:focus-visible {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
+/* --- Cabeçalho e Navegação --- */
+.main-header {
+    background-color: var(--card-background-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--heading-color);
+}
+
+.main-header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.main-header nav a {
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+/* --- Seção Hero - Introdução --- */
+.hero {
+    background-color: var(--card-background-color);
+    text-align: center;
+    padding: 6rem 0;
+}
+
+.hero h1 {
+    font-size: 3rem;
+}
+
+.hero .subtitle {
+    font-size: 1.5rem;
+    color: #6c757d; 
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--primary-hover-color);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* --- Seção Sobre --- */
+
+.about p {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* --- Grid de Projetos --- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Grid responsivo */
+    gap: 2rem;
+}
+
+.project-card {
+    background-color: var(--card-background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; 
+}
+
+.project-card h3, .project-card p, .project-card a {
+    padding: 0 1.5rem;
+}
+
+.project-card h3 {
+    margin-top: 1.5rem;
+}
+
+.project-card p {
+    flex-grow: 1; 
+    margin-bottom: 1.5rem;
+}
+
+.project-card a {
+    display: inline-block;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+/* --- Seção de Contato e Rodapé --- */
+.contact {
+    text-align: center;
+}
+.contact-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+.contact-links a {
+    font-size: 1.2rem;
+}
+
+.main-footer {
+    background-color: var(--heading-color);
+    color: var(--background-color);
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+/* --- Media Queries para Responsividade --- */
+@media (max-width: 768px) {
+    .main-header .container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    .hero .subtitle {
+        font-size: 1.2rem;
+    }
+}
+
+/* --- Estilos para a Seção Sobre com Foto --- */
+.about-content {
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap; 
+}
+
+.about-photo {
+    flex-basis: 300px; 
+    flex-grow: 0;
+}
+
+.profile-pic {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 50%; 
+    object-fit: cover; 
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.about-text {
+    flex-basis: 500px; 
+    flex-grow: 1;
+}
+
+
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column; 
+        text-align: center;
+    }
+}
